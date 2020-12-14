@@ -14,8 +14,7 @@
     "tags": [
     {
     "name": "Users",
-    "description": "API for users in the system"
-
+    "description": "API de usuários"
     }
     ],
     "schemes": [
@@ -28,67 +27,86 @@
     "application/json"
     ],
     "paths": {
-        "/users": {
-        "get": {
+        "/user/signup": {
+        "post": {
         "tags": [
         "Users"
         ],
-        "summary": "Get all users in system",
+        "summary": "Criar novo usuário",
         "responses": {
-        "200": {
-        "description": "OK",
+        "201": {
+        "description": "Created",
         "schema": {
-        "$ref": "#/definitions/Users"
-        }
-        }
-        }
-        }
-        }
-        },
-         "definitions": {
-        "User": {
-        "required": [
-        "name",
-        "_id",
-        "companies"
-        ],
-        "properties": {
-        "_id": {
-        "type": "integer",
-        "uniqueItems": true
-        },
-        "isPublic": {
-        "type": "boolean"
-        },
-        "name": {
-        "type": "string"
-        },
-        "books": {
-        "type": "array",
-        "items": {
-        "type": "object",
-        "properties": {
-        "name": {
-        "type": "string"
-        },
-        "amount": {
-        "type": "number"
-        }
-        }
-        }
-        },
-        "companies": {
-        "type": "array",
-        "items": {
-        "type": "string"
-        }
-        }
-        }
-        },
-        "Users": {
-        "type": "array",
         "$ref": "#/definitions/User"
         }
         }
+        }
+        }
+        },
+        "/user/login": {
+            "post": {
+            "tags": [
+            "Users"
+            ],
+            "summary": "Fazer login de usuário",
+            "responses": {
+            "200": {
+            "description": "OK",
+            "schema": {
+            "$ref": "#/definitions/UserLogin"
+            }
+            }
+            }
+            }
+            }
+
+
+        },
+         "definitions": {
+       
+        "User": {
+        "required": [
+        "firstName",
+        "_id",
+        "lastName",
+        "email",
+        "password"
+        ],
+        "properties": {
+        "_id": {
+        "type": "string",
+        "uniqueItems": true
+        },
+        "firstName": {
+        "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "email":{
+            "type":"string"
+        },
+        "password": {
+            "type": "String",
+            "required": true
+        }
+        }
     
+        },
+        "UserLogin":{
+            "required": [
+                "email",
+                "password"
+                ],
+        "properties": {
+        "email":{
+            "type":"string"
+        },
+        "password": {
+            "type": "String",
+            "required": true
+        }
+        }
+        }
     }
+}
