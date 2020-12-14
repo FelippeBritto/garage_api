@@ -58,7 +58,23 @@
             }
             }
             }
-            }
+            },
+            "/user/new-address": {
+                "post": {
+                "tags": [
+                "Users"
+                ],
+                "summary": "Adicionar endereço para usuário",
+                "responses": {
+                "201": {
+                "description": "Created",
+                "schema": {
+                "$ref": "#/definitions/UserAddress"
+                }
+                }
+                }
+                }
+                }
 
 
         },
@@ -87,7 +103,7 @@
             "type":"string"
         },
         "password": {
-            "type": "String",
+            "type": "string",
             "required": true
         }
         }
@@ -103,8 +119,62 @@
             "type":"string"
         },
         "password": {
-            "type": "String",
+            "type": "string",
             "required": true
+        }
+        }
+        },
+        "UserAddress":{
+        "required": [
+            "_id",
+            "user",
+            "address"
+        ],
+        "properties": {
+        "_id":{
+            "type":"string"
+        },
+        "user": {
+            "type": "string",
+            "required": true
+        },
+        "address": {
+            "fullName":{
+                "type": "string",
+                "required": true
+            },
+            "mobileNumber":{
+                "type": "number",
+                "required": true
+            },
+            "pinCode":{
+                "type": "number",
+                "required": true
+            },
+            "locality":{
+                "type": "string",
+                "required": true
+            },
+            "address":{
+                "type": "string",
+                "required": true
+            },
+            "cityDistrictTown":{
+                "type": "string",
+                "required": true
+            },
+            "state":{
+                "type": "string",
+                "required": true
+            },
+            "lendmark":{
+                "type": "string",
+                "required": true
+            },
+            "alternatePhoneNumber":{
+                "type": "number",
+                "required": true
+            }
         }
         }
         }
