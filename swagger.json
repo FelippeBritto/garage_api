@@ -15,7 +15,16 @@
     {
     "name": "Users",
     "description": "API de usuários"
+    },
+    {
+        "name":"Products",
+        "description":"API de produtos"
+    },
+    {
+        "name":"Orders",
+        "description":"API de pedidos"
     }
+
     ],
     "schemes": [
     "http"
@@ -135,7 +144,7 @@
                             "/order/create": {
                                 "post": {
                                 "tags": [
-                                "Order"
+                                "Orders"
                                 ],
                                 "summary": "Criar Pedido",
                                 "responses": {
