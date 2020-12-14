@@ -9,7 +9,7 @@
     "url": "https://opensource.org/licenses/MIT"
     }
     },
-    "host": "https://apigarageoat.herokuapp.com/",
+    "host": "apigarageoat.herokuapp.com",
     "basePath": "/",
     "tags": [
     {
@@ -91,18 +91,65 @@
                     ],
                     "summary": "Buscar endereço do usuário",
                     "responses": {
-                    "201": {
-                    "description": "Created",
+                    "200": {
+                    "description": "OK",
                     "schema": {
                     "$ref": "#/definitions/UserAddressGet"
                     }
                     }
                     }
                     }
-                    }
-
-
+                    },
+                    "/product/create": {
+                        "post": {
+                        "tags": [
+                        "Products"
+                        ],
+                        "summary": "Criar Produto",
+                        "responses": {
+                        "201": {
+                        "description": "Created",
+                        "schema": {
+                        "$ref": "#/definitions/Product"
+                        }
+                        }
+                        }
+                        }
+                        },
+                        "/product/": {
+                            "get": {
+                            "tags": [
+                            "Products"
+                            ],
+                            "summary": "Buscar Todos os Produtos",
+                            "responses": {
+                            "200": {
+                            "description": "OK",
+                            "schema": {
+                            "$ref": "#/definitions/ProductGet"
+                            }
+                            }
+                            }
+                            }
+                            },
+                            "/order/create": {
+                                "post": {
+                                "tags": [
+                                "Order"
+                                ],
+                                "summary": "Criar Pedido",
+                                "responses": {
+                                "201": {
+                                "description": "Created",
+                                "schema": {
+                                "$ref": "#/definitions/Order"
+                                }
+                                }
+                                }
+                                }
+                                }
         },
+
          "definitions": {
        
         "User": {
