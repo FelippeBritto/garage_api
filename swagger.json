@@ -139,6 +139,7 @@
             "required": true
         },
         "address": {
+            "type" : "array",
             "fullName":{
                 "type": "string",
                 "required": true
