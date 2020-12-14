@@ -26,6 +26,15 @@
     "produces": [
     "application/json"
     ],
+    "securityDefinitions": {
+        "JWT": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": ""
+        }
+    },
+
     "paths": {
         "/user/signup": {
         "post": {
@@ -138,8 +147,7 @@
             "type": "string",
             "required": true
         },
-        "address": {
-            "type" : "array",
+        "address": [{  
             "fullName":{
                 "type": "string",
                 "required": true
@@ -176,7 +184,7 @@
                 "type": "number",
                 "required": true
             }
-        }
+        }]
         }
         }
     }
